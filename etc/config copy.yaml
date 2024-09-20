@@ -1,0 +1,5 @@
+SubscribedGroups: [646464]
+QQUin: 10001 # 机器人的qq号
+SignUrl: https://sign.lagrangecore.org/api/sign
+DeviceInfoSeed: 898989
+BotPrefix: "eft"
