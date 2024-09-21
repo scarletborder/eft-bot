@@ -31,8 +31,10 @@ func Subscribe(srvCtx *svc.ServiceContext) {
 				content = strings.TrimSpace(content)
 
 				// TODO : 执行逻辑
-				if content == "汇率" {
-					res, _ := query.QueryExchange()
+				if content == "帮助" || content == "help" {
+
+				} else if content == "汇率" || content == "exchange" {
+					res := ExchangeFunc()
 					text := message.NewText(res)
 					_, err := client.SendGroupMessage(event.GroupUin, []message.IMessageElement{text})
 					if err != nil {
@@ -69,6 +71,7 @@ func Subscribe(srvCtx *svc.ServiceContext) {
 
 				} else {
 					res, _ := query.QueryByCn(content)
+					res = ParseComplexItems(res)
 					text := message.NewText(res)
 					_, err := client.SendGroupMessage(event.GroupUin, []message.IMessageElement{text})
 					if err != nil {

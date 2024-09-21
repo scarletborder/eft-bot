@@ -42,5 +42,5 @@ The default prefix is eft, but you can modify it in the configuration file.
 | help           | Display current supported command                         |
 | 汇率           | 展示游戏中美元,欧元汇率                                   |
 | exchange       | Display the US dollar and euro exchange rates in the game |
-| x87            | Calculate item's price in euro through 口关's theory      |
-| Other Input... | Display other item's market information                   |
+| x87 {num}      | Calculate item's price in euro through 口关's theory      |
+| Other Input... | Display other item's flea market information              |

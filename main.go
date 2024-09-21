@@ -25,7 +25,6 @@ func main() {
 	ctx := svc.NewServiceContext(c)
 	defer svc.SaveUinInfo(ctx.QQCli) // 保存账号信息
 
-	// TODO: 启动bot
 	bot.Subscribe(ctx)
 
 	// setup the main stop channel

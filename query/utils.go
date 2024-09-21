@@ -3,7 +3,6 @@ package query
 import (
 	"fmt"
 	"net/url"
-	"strconv"
 
 	"github.com/tidwall/gjson"
 )
@@ -72,22 +71,6 @@ func QueryDollar() (int, error) {
 		return 0, fmt.Errorf("no expected field exists")
 	}
 	return int(firstElement.Int()), nil
-}
-
-func QueryExchange() (string, error) {
-	var ret string
-	// TODO: error handle
-	c, err := QueryEuro()
-	ret += "euro:" + strconv.Itoa(c) + "\t"
-	if err != nil {
-		return "", err
-	}
-	c, err = QueryDollar()
-	if err != nil {
-		return "", err
-	}
-	ret += "dollar:" + strconv.Itoa(c)
-	return ret, nil
 }
 
 // 将json文本转换成便于观察的表格形式
